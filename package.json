@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/blister/recruiting-estimates/issues"
   },
-  "homepage": "https://github.com/blister/recruiting-estimates#readme"
+  "homepage": "https://github.com/blister/recruiting-estimates#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
