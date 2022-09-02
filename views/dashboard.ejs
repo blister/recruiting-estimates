@@ -1,0 +1,101 @@
+
+<%- include('partials/header.ejs'); %>
+
+<main class="container">
+	<div class="py-5">
+		<h2>Recruiting Estimates</h2>
+		<p class="lead">
+			Hiring is hard, and as a non-profit you can't compete with the big guys on salary and benefits.
+            This tool was designed to make it possible for you to know what you need to effectively
+            source and attract powerful talent. 
+		</p>
+		
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 order-md-2 mb-4">
+			<h4 class="d-flex justify-content-between align-items-center mb-3">
+				<span class="text-muted">Some Content</span>
+				<span class="badge badge-secondary badge-pill">3</span>
+			</h4>
+
+			<form class="card p-2" action="/import_contracts/">
+				<div class="input-group">
+					<button type="submit" class="btn btn-primary">Import Contracts</button>
+				</div>
+			</form>
+
+			<ul class="list-group mb-3">
+				<li class="list-group-item d-flex justify-content-between lh-condensed">
+					<div <%- settings.premier ? 'class="text-success"' : '' %>>
+						<h6 class="my-0">Premier</h6>
+						<!-- <small class="text-muted">Brief description</small> -->
+					</div>
+					<span class="text-muted">Something</span>
+				</li>
+
+				<li class="list-group-item d-flex justify-content-between lh-condensed">
+					<div>
+						<h6 class="my-0">Master</h6>
+						<!-- <small class="text-muted">Brief description</small> -->
+					</div>
+					<span class="text-muted">Something</span>
+				</li>
+
+				<li class="list-group-item d-flex justify-content-between lh-condensed">
+					<div>
+						<h6 class="my-0">Elite</h6>
+						<!-- <small class="text-muted">Brief description</small> -->
+					</div>
+					<span class="text-muted">Something</span>
+				</li>
+			</ul>
+
+			
+		</div>
+
+		<div class="col-md-8 order-md-1">
+			<h4 class="mb-3">League Settings</h4>
+			
+			<form class="needs-validation" novalidate action="/manage_league" method="post">
+
+			<div class="mb-3">
+				<label for="username">Season</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="season" id="season" placeholder="season" value="" required>
+					<div class="invalid-feedback" style="width: 100%;">
+						Season is required
+					</div>
+				</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="username">Contract Sheet</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="contract_url" id="contract_url" placeholder="contract_url" value="" required>
+					<div class="invalid-feedback" style="width: 100%;">
+						Contract sheet URL is required.
+					</div>
+				</div>
+			</div>
+
+			<hr class="mb-4">
+			
+			
+			<div class="custom-control custom-checkbox">
+				<input type="checkbox" class="custom-control-input" name="amateur" id="amateur">
+				<label class="custom-control-label" for="amateur">Amateur</label>
+			</div>
+		
+			<hr class="mb-4">
+			
+			<button class="btn btn-primary btn-lg btn-block" type="submit">Update League Settings</button>
+			
+			</form>
+		</div>
+
+	</div>
+
+</main>
+
+<%- include('partials/footer.ejs'); %>
