@@ -18,7 +18,7 @@
 	let resumeReview = applicants[seniority] * hiringCost * (10 / 60);
 	let phoneScreen = screens * hiringCost * (30 / 60);
 	let inpersonInterview = interviews * hiringCost * 2;
-	let totalCost = resumeReview + phoneScreen + inpersonIntervew;
+	let totalCost = resumeReview + phoneScreen + inpersonInterview;
 %>
 
 <main class="container">
@@ -42,7 +42,7 @@
 			<ul>
 				<li>Resume Review: $<%= resumeReview %></li>
 				<li>Phone Screens: $<%= phoneScreen %></li>
-				<li>In-person Interviews: $<%= inpersonIntervew %></li>
+				<li>In-person Interviews: $<%= inpersonInterview %></li>
 			</ul>
 
 			Your total in-house recruiting cost to fill this one position will be <strong>$<%= totalCost %></strong>
