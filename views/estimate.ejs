@@ -15,10 +15,10 @@
 
 	const hiringCost = 50;
 
-	let resumeReview = applicants[seniority] * hiringCost * (10 / 60);
-	let phoneScreen = screens * hiringCost * (30 / 60);
-	let inpersonInterview = interviews * hiringCost * 2;
-	let totalCost = resumeReview + phoneScreen + inpersonInterview;
+	let resumeReview = Number(applicants[seniority] * hiringCost * (10 / 60)).toFixed(2);
+	let phoneScreen = Number(screens * hiringCost * (30 / 60)).toFixed(2);
+	let inpersonInterview = Number(interviews * hiringCost * 2).toFixed(2);
+	let totalCost = Number(parseFloat(resumeReview) + parseFloat(phoneScreen) + parseFloat(inpersonInterview)).toFixed(2);
 %>
 
 <main class="container">
