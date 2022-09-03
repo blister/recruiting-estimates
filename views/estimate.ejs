@@ -1,0 +1,58 @@
+
+<%- include('partials/header.ejs'); %>
+
+<%
+
+	let applicants = {
+		entry: 100,
+		junior: 80,
+		mid: 50,
+		senior: 25
+	};
+
+	let screens = Math.ceil(applicants[ seniority ] * .25);
+	let interviews = Math.ceil(applicants[ seniority ] * .1);
+
+	const hiringCost = 50;
+
+	let resumeReview = applicants[seniority] * hiringCost * (10 / 60);
+	let phoneScreen = screens * hiringCost * (30 / 60);
+	let inpersonInterview = interviews * hiringCost * 2;
+	let totalCost = resumeReview + phoneScreen + inpersonIntervew;
+%>
+
+<main class="container">
+	<div class="bg-light p-5 rounded">
+		<h1>Recruiting Estimate for <%= role %></h1>
+		<p class="lead">
+			Finding the right fit is a factor of time, energy, and available resources in your region. 
+		</p>
+		
+		<h3>Applicant Volume</h3>
+		<p>
+			<ul>
+				<li>Applicants: <%= applicants[ seniority ] %></li>
+				<li>Phone Screens: <%= screens %></li>
+				<li>In-person Interviews: <%= interviews %></li>
+			</ul>
+		</p>
+
+		<h3>Recruiting Costs (assume $<%= hiringCost %>/hr baseline cost)</h3>
+		<p>
+			<ul>
+				<li>Resume Review: $<%= resumeReview %></li>
+				<li>Phone Screens: $<%= phoneScreen %></li>
+				<li>In-person Interviews: $<%= inpersonIntervew %></li>
+			</ul>
+
+			Your total in-house recruiting cost to fill this one position will be <strong>$<%= totalCost %></strong>
+		</p>
+
+	</div>
+
+	<div class="bg-light p-5 rounded">
+	
+	</div>
+</main>
+
+<%- include('partials/footer.ejs'); %>

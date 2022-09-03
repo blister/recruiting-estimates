@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/estimate', (req, res) => {
-    res.json(req.body);
+    res.render('estimate', res.body);
 });
 
 app.listen(process.env.PORT || 3001);
