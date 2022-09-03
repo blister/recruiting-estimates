@@ -15,7 +15,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/estimate', (req, res) => {
-    res.render('estimate', res.body);
+    res.render('estimate', { 
+        seniority: req.body.seniority,
+        salary: req.body.salary,
+        role: req.body.role,
+    });
 });
 
 app.listen(process.env.PORT || 3001);
